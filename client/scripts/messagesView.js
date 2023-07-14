@@ -10,12 +10,18 @@ var MessagesView = {
     // when this view loads.
   },
 
-  render: function() {
+  render: function(message) {
     // TODO: Render _all_ the messages.
+    console.log("in render");
+    MessagesView.renderMessage(message);
+
   },
 
   renderMessage: function(message) {
-    // TODO: Render a single message.
+    console.log("in render message");
+    console.log("message", message);
+    var $message = MessageView.render(message);
+    MessagesView.$chats.append($message);
   },
 
   handleClick: function(event) {
